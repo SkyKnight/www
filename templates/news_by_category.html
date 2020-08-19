@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Kategoria {{ c.name }}</h2>
+{% for n in object_list %}
+	<h3><a href="/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+	{{ n.text|safe }}<br />
+	<b>Dodane</b>: {{ n.date|date:"Y.m.d H:i" }}, <b>Kategorie</b>:
+	{% for i in n.category.all %}
+	<a href="/{{ i.slug }}/">{{ i.name }}</a>{% if not forloop.last %}, {% endif %}
+	{% endfor %}
+{% endfor  %}
+
+{% if has_previous %}
+	<div style="text-align:center;"><a href="/{{ c.slug }}/?page={{ previous }}"><b>Nowsze Wiadomości</b></a></div>
+{% endif %}
+{% if has_next %}
+	<div style="text-align:center;"><a href="/{{ c.slug }}/?page={{ next }}"><b>Starsze Wiadomości</b></a></div>
+{% endif %}
+{% endblock %}
+
+{% block title %}Blog | Wiadomości z {{ c.name }}{% endblock %}

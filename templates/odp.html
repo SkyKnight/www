@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-left" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <!-- {% block main %} --><!-- {% endblock %} -->
+            
+            <div class="static-tresc">
+            <h3>Listy Czytelników</h3>
+{% if user.is_staff %}
+            
+ 
+	    <a href='/odpowiedzi/'>    Wróć do listy</a>
+            <p>Nadawca: {{l.name}}</p>
+            <p>Adres: {{l.email}}</p>
+            <p>Temat: {{l.theme}}</p>
+            <p>Treść: </p>
+            <p>{{l.message}}</p>
+            
+            {% endif %}
+
+
+
+            </div>
+        </div>
+            <div class="main-dol">&nbsp;</div>
+
+                <!-- główny blok koniec -->
+    </div>
+
+                        
+{% endblock %}
+

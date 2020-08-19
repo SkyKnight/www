@@ -1,0 +1,18 @@
+<div><img src="http://www.nspj.bydgoszcz.pl/site_media/images/coeur-vendeen.png" alt="logo" width="50" /></div>
+<p></p>
+<div style="text-align: right;"><p>Bydgoszcz, {{date.day}}-{{date.month}}-{{date.year}}</p></div>
+     {% for n in news %}
+         <div class="news">
+	        <h3><a href="http://nspj.bydgoszcz.pl/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+		{{ n.text|safe }}</p>
+
+		<p>    {{ n.date|date:"Y.m.d H:i" }}
+	        </p>
+	 </div>
+ {% endfor  %}
+
+
+
+
+
+ 

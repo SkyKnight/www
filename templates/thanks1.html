@@ -1,0 +1,14 @@
+{% extends "static.html" %}
+
+{% block main %}
+
+<p>Odpowiedź została wysłana</p>
+<p><a href='/listy/'>Wróć do listy</a></p>
+<script>
+    function init(){
+        setTimeout('document.location="/"', 10000);
+       		   }
+    window.onload=init;
+</script>
+{% endblock %}
+

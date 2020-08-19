@@ -1,0 +1,5 @@
+# -*- coding:utf-8 -*-
+class Command(BaseCommand):
+
+    def handle(self, *args, **options):
+        print u"Heh, mam cię w dupie, ale próbuj dalej!"

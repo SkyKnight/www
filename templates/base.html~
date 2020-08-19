@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load tree_menu_tags %}
+{% load tagging_tags %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pl_PL" />
+<meta name="keywords" content="Msza, tradycja, łacina, Summorum pontificum, Benedykt" />
+<meta name="description" content="Strona parafii Najświętszego Serca Pana Jezusa w Bydgoszczy" />
+<link rel="alternate" type="application/rss+xml" title="Parafia NSPJ w Bydgoszczy" href="../rss/news" />
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/css/style.css" />
+<script type="text/javascript" src="/site_media/js/contentslider.js">
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<title>{{ wpis.tytul }}{{ news.title }} | Parafia NSPJ w Bydgoszczy</title>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25776185-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+	
+<div id="page">
+    <div id="header">
+      {#<div id="hcontainer">#}
+        <div id="coeur">
+              <a href="/"><img src="/site_media/images/coeur-vendeen.png" border="0" alt="Najświętsze Serce Jezusa"/></a>
+        </div>
+
+        <div id="title">
+	    {% comment %}
+             <p id="t1"><a href="/">Rzymskokatolicka Parafia</a></p>
+             <p id="t2"><a href="/">Najświętszego Serca Pana Jezusa</a></p>
+             <p id="t3"><a href="/">w Bydgoszczy</a></p>
+            {% endcomment %}
+<a href="/"><img id="imgtitle" src="/site_media/images/header.png" border="0"  width="785" alt="Parafia NSPJ w Bydgoszczy" /></a>
+        </div>
+
+{% comment %}       <div id="logo">
+             <a href="/"><img  src="/site_media/images/logo.png" alt="Kościół NSJPJ w Bydgoszczy" height="125" /></a>
+        </div> {% endcomment %}
+
+      {#</div>#}
+    </div> 
+    <div id="date">
+	Dziś jest {{today.day}} {{month1}} A.D. {{today.year}} - {{liturg_day.name}} 
+    </div>
+    <div id="empty"></div>   
+	
+    <div id="menu">
+	<ul>
+		{% show_menu "main" %}
+	</ul>
+
+<p class="fb">
+
+</p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-box">
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/Parafia-Rzymskokatolicka-NSPJ-w-Bydgoszczy/175420309201701" data-width="200" data-show-faces="true" data-stream="false" data-header="false" data-border-color="#ccc"></div>
+</div>
+    </div>
+    <div id="main">	
+			
+	       {% block wiadomosci %} {% endblock %}
+    </div>
+
+
+    <!-- pasek boczny start -->
+    <div id="sidebar">
+        <img id="mainfoto" src="/site_media/content/kosciol_nspj.jpg.jpg" width="100%" alt="Bydgoskie Sacre Coeur"/> 
+        {% include "manifest.html" %}
+        {% include "search.html" %}
+        {% include "last_news.html" %}
+        {% include "newsletter.html" %}
+        {% include "tagi.html" %}
+        {% include "archives_widg.html" %}
+    <!-- pasek boczny koniec -->
+    </div>
+    <div style="clear: both">&nbsp;</div>
+
+    <div id="empty"></div>
+    <div class="footer1">
+         Projekt i oprogramowanie - <a href="http://www.jedryka.com"> Michał Jędryka</a>
+    </div>
+</div>     
+</body>
+</html>
+

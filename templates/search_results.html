@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block wiadomosci %}
+
+
+<div id="main-left" class="main">
+    <div class="main-gora">&nbsp;</div>
+    <div class="main-center">
+    <div class="static-tresc">
+	    <h2>Wyniki wyszukiwania</h2>       
+	    <p>Szukano frazy "{{ term }}". Wyniki:
+
+	    <h3>Wśród aktualności:</h3>    
+    <ol class="search-result-newsy">
+     {% for n in news %}
+         <li>
+	        <strong><a href="/news/{{ n.slug }}/">{{ n.title }}</a></strong>
+		{{ n.text|removetags:"div span ul li ol a h1 h2 h3 h4 h5 h6"|truncatewords_html:8|safe}}
+		<p class="news-dane"><div class="more-link"><a href="/news/{{ n.slug }}/">Czytaj dalej >></a></div>
+		Wiadomość z: {{ n.date|date:"Y.m.d H:i" }}, 
+	      </p>
+	</li>
+
+    {% endfor  %}
+	
+    </ol>
+    <h3>Wśród innych stron:</h3>
+    <ol class="search-result-inne">
+    {% for p in pages %}
+	<li>
+          <strong><a href="/static/{{ p.slug }}/">{{ p.tytul }}</a></strong>
+	</li>
+
+    {% endfor  %}
+    </ol>
+    </div>
+    </div>
+    <div class="main-dol">&nbsp;</div>
+</div>
+
+<!-- główny blok koniec -->
+
+
+
+		<div style="clear: both">&nbsp;</div>
+
+{% endblock %}

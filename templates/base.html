@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load tree_menu_tags %}
+{% load tagging_tags %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pl_PL" />
+<meta name="keywords" content="Msza, tradycja, łacina, Summorum pontificum, Benedykt" />
+<meta name="description" content="Strona parafii Najświętszego Serca Pana Jezusa w Bydgoszczy" />
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Parafia NSPJ w Bydgoszczy" href="../rss/news" />
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/css/style.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/css/style11.css" />
+
+<!-- Bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="Shortcut icon" href="/site_media/icons/favicon.ico" />
+<script type="text/javascript">
+    var GB_ROOT_DIR = "http://www.nspj.bydgoszcz.pl/site_media/box/greybox/";
+</script>
+<script type="text/javascript" src="http://www.nspj.bydgoszcz.pl/site_media/box/greybox/AJS.js"></script>
+<script type="text/javascript" src="http://www.nspj.bydgoszcz.pl/site_media/box/greybox/AJS_fx.js"></script>
+<script type="text/javascript" src="http://www.nspj.bydgoszcz.pl/site_media/box/greybox/gb_scripts.js"></script>
+<link href="http://www.nspj.bydgoszcz.pl/site_media/box/greybox/gb_styles.css" rel="stylesheet" type="text/css" />
+
+
+<script language="JavaScript" type="text/JavaScript">
+function clicklink()
+{
+document.getElementById('onload').click();
+}
+</script>
+
+<script type="text/javascript" src="/site_media/js/jquery.js"></script>
+<script type="text/javascript" src="/site_media/js/script.js"></script>
+
+<script type="text/javascript" src="http://ciasteczka.eu/cookiesEU-latest.min.js"></script>
+
+
+<title>{{ wpis.tytul }}{{ news.title }} | Parafia Najświętszego Serca Pana Jezusa w Bydgoszczy</title>
+
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+jQuery.fn.cookiesEU();
+});
+
+</script>
+
+
+
+<script type="text/javascript" src="/site_media/js/contentslider.js">
+
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<title>{{ wpis.tytul|removetags:"em" }}{{ news.title }}{{ big_film.0.title }} | Parafia NSPJ w Bydgoszczy</title>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25776185-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body> 
+<!--{% if main %}
+onload="clicklink();"
+{% endif %}
+-->
+<div class="container">	
+<div id="page">
+{% comment %}
+<div id="surhaeder">
+
+<p>W każdy pierwszy piątek miesiąca całodzienna adoracja Najświętszego Sakramentu <br />oraz Msza św. w intencjach Ojczyzny, Narodu i Kościoła w Polsce – o godzinie 19.15 <a id="onload" href="/site_media/images/piatek_szaniawski.jpg" rel="gb_image[]"> </a></p>
+</div>
+
+<div id="surhaeder">
+
+<p><a href="/static/swieta-gemma"><span style="font-size:1.2em">Relikwie św. Gemmy w Bydgoskim Sacr&eacute; Coeur</span></a> <a id="onload" href="/site_media/content/kosciol1.jpg" rel="gb_image[]"> </a></p>
+</div>
+{% endcomment %}
+  <div id="head1">
+    <div id="header">
+        
+       
+<a href="/"><img id="imgtitle" src="/site_media/images/title.png" border="0" width="100%" alt="Parafia NSPJ w Bydgoszczy" /></a>
+
+{% comment %}
+      <div id="hcontainer">
+        <div id="coeur">
+              <a href="/"><img src="/site_media/images/coeur-vendeen.png" height="120" border="0" alt="Najświętsze Serce Jezusa"/></a>
+        </div>
+
+        <div id="title">
+
+<a href="/"><img id="imgtitle" src="/site_media/images/header.png" border="0"  width="585" alt="Parafia NSPJ w Bydgoszczy" /></a>
+        </div>
+
+
+      </div>
+{% endcomment %}
+    </div> 
+  </div>
+  <div id="head2"></div>
+    <div id="date">
+	Dziś jest {{today.day}} {{month1}} A.D. {{today.year}} - {{liturg_day.name}} 
+    </div>
+    <div id="empty"></div>   
+	
+    <div id="menu">
+      <div id="gazetka">
+        <a href="/static/glos-serca-gazetka-parafialna/"><img src="/site_media/content/glosserca.jpg" width="100%" alt="Gazetka parafialna Głos Serca" /></a><p>&nbsp;</p>
+      </div>
+	<ul>
+		{% show_menu "main" %}
+	</ul>
+
+<p class="fb">
+
+</p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-box">
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/Parafia-Rzymskokatolicka-NSPJ-w-Bydgoszczy/175420309201701" data-width="200" data-show-faces="true" data-stream="false" data-header="false" data-border-color="#ccc"></div>
+</div>
+
+{% comment %}
+<div id="counter">
+<p>Stronę odwiedzono<br /> <!-- kod licznika [[[http://liczniki.org]]]-->
+<script type='text/javascript' src='http://liczniki.org/hit.php?l=jedryka&o=1'></script>
+<!-- koniec kodu licznika   [[[http://liczniki.org]]]--> razy.</p>
+
+</div>    {% endcomment %}  
+<h3>Polecamy</h3>
+<div style="margin-bottom:20px">
+<a href="http://pch24.pl"><img src="http://www.pch24.pl/images/2013/logo.gif" a\
+lt='' width="100%" /></a>
+</div>
+<div style="margin-bottom:20px">
+<a href="http://christianitas.org"><img src="http://liturgia.bydgoszcz.pl/site_media/content/logo.png" alt=
+"" width="100%" /></a></div>
+
+<a href="http://www.swietagemma.pl"><img src="http://nspj.bydgoszcz.pl/site_media/content/gemma.jpg" alt=
+"" width="100%" /></a></div>
+
+
+    </div>
+    <div id="main">	
+
+	       {% block wiadomosci %} {% endblock %}
+    </div>
+
+
+    <!-- pasek boczny start -->
+    <div id="sidebar">
+
+<!--
+<h3>Roraty</h3>
+<p></p>
+
+<a href="/film/?y=jYJ9rSZtMUw" class="widget-film-link">
+                <img src="//i2.ytimg.com/vi/jYJ9rSZtMUw/hqdefault.jpg" alt="Zobacz\
+ film" width="100%" />
+
+                </a>
+
+
+<p>2 grudnia rozpocznie się adwent. Ks. Prałat zachęca do udziału w roratach.</p>
+-->
+
+
+
+
+{#        {% include "film.html" %}#}
+        <p></p> 
+
+<p></p>
+
+<!--
+<div class="widget">        
+<img id="mainfoto" src="/site_media/content/kosciol_nspj.jpg.jpg" width="100%" alt="Bydgoskie Sacre Coeur"/> <p></p>
+</div>      
+-->
+        {% include "manifest.html" %}
+        {% include "newsletter.html" %}
+        {% include "search.html" %}
+        {% include "last_news.html" %}
+
+      {#  {% include "tagi.html" %}#}
+        {% include "archives_widg.html" %}
+    <!-- pasek boczny koniec -->
+    </div>
+    <div style="clear: both">&nbsp;</div>
+
+    <div id="empty"></div>
+    <div class="footer1">
+         Projekt i oprogramowanie - <a href="http://www.jedryka.com"> Michał Jędryka</a>
+    </div>
+</div> 
+</div>    
+</body>
+</html>
+

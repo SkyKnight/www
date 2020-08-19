@@ -1,0 +1,186 @@
+# English translation of django.
+# Copyright (C) 2008 THE django'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the django package.
+# toke <toke@toke.de>, 2008.
+# , fuzzy
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-treemenus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-05 22:32+0300\n"
+"PO-Revision-Date: 2008-07-22 12:30+1000\n"
+"Last-Translator: Julien Phalip <jphalip@yahoo.fr>\n"
+"Language-Team: German - Thomas Kerpe\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Polish\n"
+
+#: admin.py:154 admin.py:166
+#, python-format
+msgid "The menu item \"%s\" was moved successfully."
+msgstr "Element \"%s\" został przesunięty."
+
+#: admin.py:156
+#, python-format
+msgid "The menu item \"%s\" is not allowed to move down."
+msgstr "Elementu \"%s\" nie można przesunąć niżej."
+
+#: admin.py:168
+#, python-format
+msgid "The menu item \"%s\" is not allowed to move up."
+msgstr "Elementu \"%s\" nie mozna przesunąć wyżej."
+
+#: models.py:13
+msgid "Parent"
+msgstr "Nadrzędny"
+
+#: models.py:14 templates/admin/treemenus/menu/change_form.html:24
+msgid "Caption"
+msgstr "Nazwa"
+
+#: models.py:15
+msgid "URL"
+msgstr "URL"
+
+#: models.py:16
+msgid "Named URL"
+msgstr "Nazwany URL"
+
+#: models.py:17
+msgid "Level"
+msgstr "Poziom"
+
+#: models.py:18
+msgid "Rank"
+msgstr "Ranga"
+
+#: models.py:19 models.py:142
+msgid "Menu"
+msgstr "Menu"
+
+#: models.py:119
+msgid "Name"
+msgstr "Nazwa"
+
+#: models.py:120
+msgid "Root Item"
+msgstr "Element początkowy"
+
+#: models.py:124
+msgid "Root"
+msgstr "Początek"
+
+#: models.py:143 templates/admin/treemenus/menuitem/change_form.html:19
+#: templates/admin/treemenus/menuitem/change_form.html:24
+#: templates/admin/treemenus/menuitem/delete_confirmation.html:16
+#: templates/admin/treemenus/menuitem/object_history.html:16
+msgid "Menus"
+msgstr "Menu'a ;)"
+
+#: templates/admin/treemenus/menu/change_form.html:8
+msgid "Menu Items"
+msgstr "Elementy menu"
+
+#: templates/admin/treemenus/menu/change_form.html:11
+msgid "Add an item"
+msgstr "Dodaj element"
+
+#: templates/admin/treemenus/menu/change_form.html:25
+msgid "Url"
+msgstr "URL"
+
+#: templates/admin/treemenus/menu/change_form.html:26
+msgid "Named url"
+msgstr "Nazwany URL"
+
+#: templates/admin/treemenus/menu/change_form.html:27
+msgid "Move"
+msgstr "Przesuń"
+
+#: templates/admin/treemenus/menu/change_form.html:37
+msgid "[Root]"
+msgstr "[Początek]"
+
+#: templates/admin/treemenus/menu/change_form.html:53
+msgid "Down"
+msgstr "W dół"
+
+#: templates/admin/treemenus/menu/change_form.html:59
+msgid "Up"
+msgstr "Do góry"
+
+#: templates/admin/treemenus/menuitem/change_form.html:18
+#: templates/admin/treemenus/menuitem/change_form.html:23
+#: templates/admin/treemenus/menuitem/delete_confirmation.html:15
+#: templates/admin/treemenus/menuitem/object_history.html:15
+msgid "Home"
+msgstr "Początek"
+
+#: templates/admin/treemenus/menuitem/change_form.html:21
+msgid "Add Item"
+msgstr "Dodaj element"
+
+#: templates/admin/treemenus/menuitem/change_form.html:26
+#: templates/admin/treemenus/menuitem/delete_confirmation.html:18
+#: templates/admin/treemenus/menuitem/object_history.html:18
+msgid "Items"
+msgstr "Elementy"
+
+#: templates/admin/treemenus/menuitem/delete_confirmation.html:20
+msgid "Delete"
+msgstr "Usuń"
+
+#: templates/admin/treemenus/menuitem/object_history.html:20
+msgid "History"
+msgstr ""
+
+#~ msgid "The menu item \"%s\" was added successfully."
+#~ msgstr "Element menu \"%s\" został dodany."
+
+#~ msgid "You may edit it again below."
+#~ msgstr "Możesz wprowadzić zmiany poniżej."
+
+#~ msgid "You may add another menu item below."
+#~ msgstr "Możesz dodać kolejny element poniżej."
+
+#~ msgid "Add menu item"
+#~ msgstr "Dodaj element"
+
+#~ msgid "The menu item \"%s\" was changed successfully."
+#~ msgstr "Element menu \"%s\" został zmieniony."
+
+#~ msgid "Change menu item"
+#~ msgstr "Zmień element menu"
+
+#~ msgid "The %(name)s \"%(obj)s\" was deleted successfully."
+#~ msgstr "%(name)s \"%(obj)s\" został usunięty."
+
+#~ msgid "Are you sure?"
+#~ msgstr "Czy aby na pewno? ;)"
+
+#~ msgid "Other attributes"
+#~ msgstr "Inne właściwości"
+
+#~ msgid "Save and add another"
+#~ msgstr "Zapisz i dodaj następny"
+
+#~ msgid "Save and continue editing"
+#~ msgstr "Zapisz i kontynuuj edycję"
+
+#~ msgid "Save"
+#~ msgstr "Zapisz"
+
+#~ msgid "Are you sure you want to delete the menu item \"%(menu_item)s\"?"
+#~ msgstr "Czy jesteś pewien, że chcesz usunąć element \"%(menu_item)s\"?"
+
+#~ msgid "Yes, I'm sure"
+#~ msgstr "Tak jest, jestem pewien ;)"
+
+#~ msgid "Change menu"
+#~ msgstr "Zmień menu"
+
+#~ msgid "Details"
+#~ msgstr "Szczegóły"

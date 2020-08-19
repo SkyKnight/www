@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="all" href="/site_media/themes/plus_1/style.css" />
+<link rel="shortcut icon" href="/site_media/favicon.ico" />
+<script src="/site_media/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/site_media/js/contentslider.js">
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<title>Polska+Plus</title>
+
+</head>
+{% load tree_menu_tags %}
+<body>
+<div id="page">
+
+				
+	<!-- naglowek -->
+	<div id="header">	
+
+		<div id="header-pre">
+			<div id="header-pre-inner">
+				<a href="/">www.polska-plus.pl</a>
+				<div id="access"><!-- elementy związane z accessibility--></div>
+				<div id="header-navi">
+					<ul>
+						<li class="navi-rss"><a href="#">RSS</a></li>
+						<li class="navi-contact"><a href="/static/kontakt">Kontakt</a></li>
+						<li class="navi-map"><a href="/static/sitemap">Mapa strony</a></li>
+						<li class="navi-home"><a href="/">Strona główna</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="header-in">
+			<div id="obrazek">
+				<p class="slogan"></p>
+			</div>
+			<h1><a href="/"><img src="/site_media/themes/plus_1/images/polska-plus_logo_314x94.png" alt="Polska Plus logo" class="logo-img" /></a></h1>
+		</div>
+
+		
+	<!-- nawigacja start-->	
+	<div id="menu">
+		{% show_menu "main" %}
+		
+	<!-- navigacja koniec-->	
+	</div>
+	<!--koniec naglowka-->					
+	</div>
+		
+
+
+	<!-- głowny blok start -->
+	<div id="content-shadow">
+	
+	<div id="content">
+	
+			
+	       {% block wiadomosci %} {% endblock %}
+
+			<!-- główny blok koniec -->
+
+		<!-- pasek boczny start -->
+		<div id="sidebar-right" class="sidebar">
+			<div class="widget">
+			<h3>Najnowsze wiadomości</h3>
+			<ul class="kat">
+				{% for i in news_glob %} 
+				<li><a href="/news/{{ i.slug }}/">{{i.title}}</a></li>
+				{% endfor %} 
+			</ul>
+			</div>
+			<div class="widget" id="widget-newsletter">
+			<h3>Newsletter</h3>
+			<p>To co najważniejsze prześlemy na Twój e-mail!</p>
+			<form action="#">
+				<input type="text" value="Wpisz adres e-mail aby się zapisać" id="email-wpisany" />
+				<input type="submit" value="Zapisz" id="wyslij" />
+			</form>
+			</div>			
+			<div class="widget" id="widget-film_1">
+			<h3>Multimedia - filmy</h3>
+			<div id="widget-film-object_1">
+				<object width="250" height="150"><param name="movie" value="http://www.youtube.com/v/W8TG0uJxX_M&hl=pl_PL&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/W8TG0uJxX_M&hl=pl_PL&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="250" height="150"></embed></object>	
+				</div>
+				<div id="widget-film-link_1"><a href="http://www.youtube.com/watch?v=W8TG0uJxX_M" title="Zobacz film">Zobacz film</a></div>
+			</div>			
+			<div class="widget">
+			<h3>Tagi</h3>
+<div id="widget_tag_cloud"><a href="tag/slub/" class="tag-link-26" title="3 tematy" rel="tag" style="font-size: 9pt;">ślub</a>
+<a href="tag/5dmk2/" class="tag-link-284" title="4 tematy" rel="tag" style="font-size: 10pt;">5dmk2</a>
+<a href="tag/aktor/" class="tag-link-73" title="3 tematy" rel="tag" style="font-size: 9pt;">aktor</a>
+<a href="tag/backstage/" class="tag-link-54" title="2 tematy" rel="tag" style="font-size: 8pt;">Backstage</a>
+<a href="tag/canon/" class="tag-link-46" title="4 tematy" rel="tag" style="font-size: 10pt;">canon</a>
+<a href="tag/demonstracja/" class="tag-link-106" title="3 tematy" rel="tag" style="font-size: 9pt;">demonstracja</a>
+<a href="tag/e-p1/" class="tag-link-233" title="3 tematy" rel="tag" style="font-size: 9pt;">E-P1</a>
+
+<a href="tag/event/" class="tag-link-25" title="3 tematy" rel="tag" style="font-size: 9pt;">event</a>
+<a href="tag/film/" class="tag-link-45" title="3 tematy" rel="tag" style="font-size: 9pt;">film</a>
+<a href="tag/fotografia-slubna/" class="tag-link-56" title="9 tematów" rel="tag" style="font-size: 15pt;">fotografia ślubna</a>
+<a href="tag/fotografia-slubna-warszawa/" class="tag-link-334" title="3 tematy" rel="tag" style="font-size: 9pt;">fotografia ślubna warszawa</a>
+<a href="tag/gdynia/" class="tag-link-92" title="3 tematy" rel="tag" style="font-size: 9pt;">gdynia</a>
+<a href="tag/jacek-zienkiewicz/" class="tag-link-74" title="3 tematy" rel="tag" style="font-size: 9pt;">Jacek Zienkiewicz</a>
+<a href="tag/juwenalia/" class="tag-link-100" title="5 tematów" rel="tag" style="font-size: 11pt;">juwenalia</a>
+<a href="tag/kosciol/" class="tag-link-58" title="2 tematy" rel="tag" style="font-size: 8pt;">kościół</a>
+<a href="tag/koncert/" class="tag-link-99" title="4 tematy" rel="tag" style="font-size: 10pt;">koncert</a>
+
+<a href="tag/majorka/" class="tag-link-12" title="2 tematy" rel="tag" style="font-size: 8pt;">Majorka</a>
+<a href="tag/minki/" class="tag-link-71" title="2 tematy" rel="tag" style="font-size: 8pt;">minki</a>
+<a href="tag/olympus/" class="tag-link-126" title="12 tematów" rel="tag" style="font-size: 18pt;">olympus</a>
+<a href="tag/pen/" class="tag-link-232" title="4 tematy" rel="tag" style="font-size: 10pt;">PEN</a>
+<a href="tag/photokina/" class="tag-link-42" title="4 tematy" rel="tag" style="font-size: 10pt;">photokina</a>
+<a href="tag/photokina-2008/" class="tag-link-356" title="3 tematy" rel="tag" style="font-size: 9pt;">photokina 2008</a>
+<a href="tag/pkin/" class="tag-link-34" title="4 tematy" rel="tag" style="font-size: 10pt;">pkin</a>
+<a href="tag/plener/" class="tag-link-22" title="5 tematów" rel="tag" style="font-size: 11pt;">Plener</a>
+<a href="tag/policja/" class="tag-link-105" title="3 tematy" rel="tag" style="font-size: 9pt;">policja</a>
+
+<a href="tag/portret/" class="tag-link-7" title="5 tematów" rel="tag" style="font-size: 11pt;">Portret</a>
+<a href="tag/przekroj/" class="tag-link-50" title="6 tematów" rel="tag" style="font-size: 12pt;">przekrój</a>
+<a href="tag/przygotowania/" class="tag-link-21" title="2 tematy" rel="tag" style="font-size: 8pt;">Przygotowania</a>
+<a href="tag/party/" class="tag-link-20" title="2 tematy" rel="tag" style="font-size: 8pt;">Przyjęcie</a>
+<a href="tag/reportaz/" class="tag-link-81" title="5 tematów" rel="tag" style="font-size: 11pt;">reportaż</a>
+<a href="tag/sample/" class="tag-link-179" title="9 tematów" rel="tag" style="font-size: 15pt;">sample</a>
+<a href="tag/sesja/" class="tag-link-41" title="7 tematów" rel="tag" style="font-size: 13pt;">sesja</a>
+<a href="tag/sesja-w-studio/" class="tag-link-72" title="2 tematy" rel="tag" style="font-size: 8pt;">sesja w studio</a>
+<a href="tag/sony/" class="tag-link-43" title="5 tematów" rel="tag" style="font-size: 11pt;">sony</a>
+
+<a href="tag/stabilizacja-obrazu/" class="tag-link-47" title="2 tematy" rel="tag" style="font-size: 8pt;">stabilizacja obrazu</a>
+<a href="tag/studio/" class="tag-link-79" title="2 tematy" rel="tag" style="font-size: 8pt;">studio</a>
+<a href="tag/tall-ships-races-2009/" class="tag-link-237" title="3 tematy" rel="tag" style="font-size: 9pt;">Tall Ships Races 2009</a>
+<a href="tag/uroczystosc/" class="tag-link-59" title="3 tematy" rel="tag" style="font-size: 9pt;">uroczystość</a>
+<a href="tag/warszawa/" class="tag-link-17" title="16 tematów" rel="tag" style="font-size: 22pt;">Warszawa</a>
+<a href="tag/wnetrza/" class="tag-link-160" title="3 tematy" rel="tag" style="font-size: 9pt;">wnętrza</a>
+<a href="tag/wnetrze/" class="tag-link-123" title="3 tematy" rel="tag" style="font-size: 9pt;">wnętrze</a>
+<a href="tag/youtube/" class="tag-link-15" title="5 tematów" rel="tag" style="font-size: 11pt;">Youtube</a>
+<a href="tag/zabawa/" class="tag-link-63" title="2 tematy" rel="tag" style="font-size: 8pt;">zabawa</a>
+
+<a href="tag/zdjecia-slubne-warszawa/" class="tag-link-335" title="8 tematów" rel="tag" style="font-size: 14pt;">zdjęcia ślubne warszawa</a>
+<a href="tag/zdjecia-testowe/" class="tag-link-176" title="5 tematów" rel="tag" style="font-size: 11pt;">zdjęcia testowe</a>
+			</div>
+			</div>
+		<!-- pasek boczny koniec -->
+		</div>
+
+
+		<div style="clear: both">&nbsp;</div>
+	<!-- div content koniec -->
+	</div>
+	<div id="content-bottom-shadow">&nbsp;</div>
+	<!-- głowny blok koniec -->
+	</div>
+		
+	<!-- stopka start -->		
+	<div id="footer">
+			
+			<div id="footer-columns">
+			</div>
+
+			
+			
+			
+			<p class="footer-bottom-line">&copy; 2009 <strong>Wszelkie Prawa Zastrzeżone</strong> | 
+			Projekt: <a href="#">Autor projektu</a> </p>
+  <!-- stopka koniec -->
+    </div>
+</div>
+
+</body>
+</html>
+

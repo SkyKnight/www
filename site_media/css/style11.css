@@ -1,0 +1,78 @@
+.sliderwrapper{
+        position: relative; /*leave as is*/
+        overflow: hidden; /*leave as is*/
+        border: 0;
+        border-bottom-width: 6px;
+        background: Silver;
+        width: 100%; /*width of featu#800044 content slider*/
+        height: 500px;
+        z-index: 10;
+        /*margin-top: 15px;*/
+        margin: 10 auto 1.5em auto;
+        }
+
+div .contentdiv {
+        visibility: hidden; /*leave as is*/
+        position: absolute; /*leave as is*/
+        left: 0;  /*leave as is*/
+        top: 0;  /*leave as is*/
+        z-index: 15;
+        padding: 0;
+        background: Silver;
+        width: 100%; /*width of content DIVs within slider. */
+        height: 500px;
+        filter:progid:DXImageTransform.Microsoft.alpha(opacity=100);
+        -moz-opacity: 1;
+        opacity: 1;
+        padding-right: 10px;
+        }
+
+div .polecane-opis h3 {
+        fonf;
+}
+
+#slider {
+        border-color: Gray;
+        margin-top: 10px;
+        height: 500px;
+        }
+
+#paginate-slider {
+        background-color: transparent;
+        border-color: #800044;
+        margin-left: 15px;
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        z-index: 80;
+        }
+
+#paginate-slider a img{
+        width: 100px;
+        height: 70px;
+        border: 2px solid gray;
+        margin-top: 5px;
+}
+
+#paginate-slider a img:hover, #paginate-slider a.selected img{
+        border: 2px solid White;
+}
+
+.polecane-opis{
+        font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+        color: white;
+        margin-left: 10px;
+
+}
+
+.polecane-opis h3{
+        margin-top:5px;
+        font-weight: bold;
+        font-size: 18px;
+}
+
+
+.polecane-opis a{
+        color: red;
+        font-family: "Palatino Linotype", Georgia, "Times New Roman", Times, Serif;
+}

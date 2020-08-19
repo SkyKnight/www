@@ -1,0 +1,37 @@
+#-*- coding: utf-8 -*-
+from django import forms 
+from django.utils import simplejson
+from django.http import HttpResponseRedirect
+from django.core.mail import EmailMessage
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from news.models import News
+
+class ContactForm(forms.Form):
+    name = forms.CharField(help_text="Nazwisko lub pseudonim")
+    email = forms.EmailField(help_text="Adres email ...",required=True)
+    message = forms.CharField(widget=forms.Textarea,required=True)
+    cc_myself = forms.BooleanField(required=False)
+    accord = forms.BooleanField(required=False)
+
+def sendform(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            email_body = u" Od: %s < %s >\n Treść: \n %s \n " %( data['name'], data['email'], data['message'])
+            if data['accord']:
+                email_body = email_body + u"Nadawca wyraził zgodę na publikację"
+            email = EmailMessage(u'Wiadomość %s' % data['name'],
+                                 email_body,
+                                 to=['michal.jedryka@gmail.com', 'rak.odwaga@gmail.com'])
+            email.send()
+            return HttpResponseRedirect('/kontakt/thanks')
+    else:
+        form = ContactForm()
+    news = News.objects.all().order_by('date').reverse()[:10]
+    return render_to_response('contact.html', RequestContext(request, {'form': form, 'newsy': news,}))
+
+def thanks(request):
+    news = News.objects.all().order_by('date').reverse()[:10]
+    return render_to_response('thanks.html', RequestContext(request, {'newsy': news,}))

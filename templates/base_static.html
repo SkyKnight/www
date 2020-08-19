@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block main %}
+	<!-- głowny blok start -->
+	<div id="content-shadow">
+	
+	<div id="content">
+	
+		<div id="main-right" class="main">
+			
+			
+			<div id="static-naglowek">
+			  
+			</div>
+			
+			<div class="static-tresc">
+				{% block show_news %}
+				<h3>Gospodarka</h3>
+				<p><img class="alignleft thumb" src="content/Konferencja-w-Lodzi-14_12_2008-6_z_6.jpg" alt="miniaturka 3" />To może być oczywiście dowolny tekst ale na stronie o gospodarce głupot pisać nie wypada</p>
+				<p>W sumie dobrze byłoby aby tekst ten był na tyle długi aby wiersze wykraczały poza długość obrazka. W przeciwnym razie blog cytatu zachodzi na obrazek i nie wygląda to zbyt ładnie.</p><p>A tymczasem. Znane już zdanie:</p> <blockquote>Szef naprawdę może przyprawić o atak serca - udowodnili szwedzcy naukowcy. Tłumiony przez lata stres u mężczyzn wywołuje bardzo poważne konsekwencje zdrowotne </blockquote><p> To wcale nie musi być mobbing. Wystarczą ciągłe reprymendy i drobne docinki, które przy niemożności wyładowania rosnącego gniewu (no bo jak go wyładować na szefie?) prowadzą do ...</p>
+			
+				<p class="news-dane"><b>Ostatnia modyfikacja</b>: 2009.11.26 13:17</p>
+				{% endblock %}
+			</div>
+			
+			
+
+		<!-- główny blok koniec -->	
+		</div>
+
+		<!-- pasek boczny start -->
+		<div id="sidebar-left" class="sidebar">
+			<div class="widget">
+			<h3>Najnowsze wiadomości</h3>
+			<ul class="kat">
+                             {% for i in news_glob %}
+                                <li><a href="/news/{{ i.slug }}/">{{i.title}}</a></li>
+                             {% endfor %}
+			</ul>
+			</div>
+			<div class="widget" id="widget-newsletter">
+			<h3>Newsletter</h3>
+			<p>To co najważniejsze prześlemy na Twój e-mail!</p>
+			<form action="#">
+				<input type="text" value="Wpisz adres e-mail aby się zapisać" id="email-wpisany" />
+				<input type="submit" value="Zapisz" id="wyslij" />
+			</form>
+			</div>			
+			<div class="widget" id="widget-film_1">
+			<h3>Multimedia - filmy</h3>
+			<div id="widget-film-object_1">
+			<object width="250" height="150" >
+			    <param name="movie" value="http://www.youtube.com/watch?v=W8TG0uJxX_M"></param>
+			    <param name="allowFullScreen" value="true">
+			    <param name="wmode" value="opaque"></param>
+			    <param name="allowscriptaccess" value="always"></param>
+			    <embed src="http://www.youtube.com/v/3oI8QTdnKyU&hl=pl_PL&fs=1&rel=0&color1=0x2b405b&color2=0x6b8ab6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="250" height="150"></embed></object>
+				</div>
+				<div id="widget-film-link_1"><a href="/link-filmu" title="Zobacz film">Zobacz film</a></div>
+			</div>
+		
+		<!-- pasek boczny koniec -->
+		</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+    <div class="widget">
+	<div><span style="text-align: left; font-size:25px; margin-bottom:10px">Obejrzyj:</span><a href="/film/"><img style="margin-bottom:-10px;" src="/site_media/images/tubacordis.png" alt='' width='150' /></a><p style="text-align:center">
+Wideoblog Proboszcza Parafii</p>
+</div>
+	<div class="widget-center">
+		<p><a href="/film/?y={{film}}" class="widget-film-link">
+		<img src="//i2.ytimg.com/vi/{{film}}/hqdefault.jpg" alt="Zobacz film" width="100%" /> 
+<!--			<span class="widget-film-arrow">&nbsp;</span>-->
+		</a></p>
+
+	</div>
+<!--	<div class="widget-dol" style="clear: both">&nbsp;</div>-->
+    </div>			

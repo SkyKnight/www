@@ -1,0 +1,11 @@
+{% load tree_menu_tags %}
+{% if menu_item.has_children %}
+    <li><div class="block"> <a href="{{ menu_item.url }}">{{ menu_item.caption|safe }}</a></div>
+	<ul>
+         {% for child in menu_item.children %}{% show_menu_item child %}{% endfor %}
+        </ul>
+    </li>
+{% else %}
+<li><a href="{{ menu_item.url }}"><div class="block">{{ menu_item.caption}}</div></a></li>
+{% endif %}
+

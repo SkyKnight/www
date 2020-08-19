@@ -1,0 +1,13 @@
+    {% for n in object_list %}
+         <div class="news">
+	        <h3><a href="http://www.polska-plus.pl/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+		{{ n.text|removetags:"div span b ul li ol i em h1 h2 h3 h4 h5 h6"|truncatewords:80|safe}}</p>
+		<p class="news-dane">
+		    <span class="more-link"><a href="http://www.polska-plus.pl/news/{{ n.slug }}/">Czytaj dalej >></a></span>
+		    <b>Dodane</b>: {{ n.date|date:"Y.m.d H:i" }}
+	        </p>
+	      <!-- <p class="news-line" /> -->
+
+	</div>
+    {% endfor  %}
+    

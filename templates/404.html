@@ -1,0 +1,21 @@
+{% extends "static.html" %}
+
+{% block main %}
+<h3>Strona o podanym adresie nie istnieje
+    <small style="font-weight: normal">(błąd 404)</small></h3>
+<p>Jeśli błąd ten pojawił się po przekierowaniu z innej strony, prosimy powiadom nas o tym za pomocą formularza
+na stronie <a href="/kontakt">Kontakt</a>.</p>
+<p>Aby znaleźć interesujące Panią/Pana treści prosimy użyć wyszukiwarki</p>
+<form action="/search/" method="get">
+    <div id="searchform_404">
+    <input id="searchinput_404" name="q" value="Szukaj" onfocus="this.value='';" type="text" />
+    <input id="searchsubmit_404" type="submit" value="Szukaj" />
+    </div>
+</form>
+<p>Można również przejść do <a href="/static/sitemap">mapy strony</a> aby przejrzeć listę wszystkich stron w ramach serwisu</p>
+
+<p>Przejdź na <a href="/">stronę główną</a> albo wróć do <a href="javascript:hisotry(-1);">poprzedniej strony</a>.</p> 
+ {{ error }}
+{% endblock %}
+
+

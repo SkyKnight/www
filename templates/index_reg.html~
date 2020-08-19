@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block wiadomosci %}
+
+
+<div id="main-left" class="main">
+    <div class="main-gora">&nbsp;</div>
+    <div class="main-center">
+	    <div class="static-tresc">
+		    {{page|safe}}       
+	    </div>    
+    <div class="newsy">
+     {% for n in object_list %}
+         <div class="{% cycle 'news' 'news ciemny' %}">
+	        <h3><a href="/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+		{% if n.photo_set.count %}
+		<img class="alignleft thumb" src="{{n.photo_set.all.0.image.thumb_url}}" alt="{{n.photo_set.all.0.title}}"/>    
+		{% endif %}
+		{{ n.text|removetags:"strong div span b ul li ol i em h1 h2 h3 h4 h5 h6"|truncatewords:50|safe}}</p>
+		<p class="news-dane">
+		    <span class="more-link"><a href="/news/{{ n.slug }}/">Czytaj dalej >></a></span>
+		    <b>Dodane</b>: {{ n.date|date:"Y.m.d H:i" }}, <b>Tagi</b>:
+		    {% for tag in n.get_tags %}
+	    	    <a href="/tag/{{tag}}">{{tag}}</a>
+	    	    {%endfor%}
+	        </p>
+	      <!-- <p class="news-line" /> -->
+
+	</div>
+    {% endfor  %}
+    
+    <div class="news-pagination">
+    {% if has_previous %}
+	<p class="news-nowsze"><a href="http://www.polska-plus.pl/regiony/wielkopolskie/?page={{ previous }}">Nowsze Wiadomości &gt;&gt;</a></p>
+    {% endif %}
+    {% if has_next %}
+	<p class="news-starsze"><a href="http://www.polska-plus.pl/regiony/wielkopolskie/?page={{ next }}">&lt;&lt; Starsze Wiadomości</a></p>
+    {% endif %}
+    </div>
+    
+    </div>
+    </div>
+    <div class="main-dol">&nbsp;</div>
+</div>
+
+<!-- główny blok koniec -->
+
+		<!-- pasek boczny start -->
+		<div id="sidebar-right" class="sidebar">
+			<!--{% include "wstep.html" %} -->
+			{% include "search.html" %}
+                        {% include "last_news.html" %}
+			{% include "film.html" %}
+			<!--{% include "deklaracja.html" %} -->
+			{% include "newsletter.html" %}
+			{% include "tagi.html" %}
+			{% include "archives_widg.html" %}
+		<!-- pasek boczny koniec -->
+		</div>
+
+
+		<div style="clear: both">&nbsp;</div>
+
+{% endblock %}

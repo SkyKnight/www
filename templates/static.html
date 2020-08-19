@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-right" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <div id="static-naglowek">
+              
+            </div>
+            
+            <div class="static-tresc">
+	    {% block main %}      
+		<h2>{{ wpis.tytul|safe }}</h2>
+		{% if wpis.hidden %}
+		<p>Artykuł w przygotowaniu</p>
+		{% else %}
+                {% if wpis.photo_set.count %}
+                <div class="photocontainer">
+                <p><img class="alignleft" src="{{wpis.photo_set.all.0.image.i600px_url}}" alt="{{wpis.photo_set.all.0.title}}" width="350px" /></p>
+                <p class="male">{{wpis.photo_set.all.0.caption}}</p>
+                </div>
+                {% endif %}
+                {{ wpis.tresc|safe }}<br />
+                {% ifequal wpis.tytul "Schola gregoriańska" %}
+                <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/Schola-Gregoria%C5%84ska-parafii-NSPJ-w-Bydgoszczy/230379663678946" data-width="400" data-show-faces="true" data-border-color="#ccc" data-stream="false" data-header="false"></div>
+                {% endifequal %}
+
+		<p class="news-dane">Ostatnia modyfikacja: {{ wpis.zmodyfikowany|date:"Y.m.d H:i" }}, </p>
+		{% endif %}
+            {% endblock %}
+	    </div>
+	</div>
+	<div class="main-dol">&nbsp;</div>
+		<!-- główny blok koniec -->	
+    </div>
+
+
+
+
+    <div style="clear: both">&nbsp;</div>
+                        
+{% endblock %}
+

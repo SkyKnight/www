@@ -1,0 +1,31 @@
+
+{% extends "static.html" %}
+{% block main %}
+<style>
+#id_message {
+width:100%;
+height:300px;
+}     
+     
+</style>     
+
+<h3>Odpowiedź na list</h3>
+
+{#{% include "contacttext.html" %}#}
+ 
+<div class="komentarze">
+<p>Do: {{list.name}}, {{list.email}}</p>
+<p>Temat: Odp: {{list.theme}}</p>
+<form action="" method="post">
+     <fieldset id="komentarze-fieldset">
+     <legend>Wysyłanie odpowiedzi</legend>
+
+         <label for="id_theme">Temat: </label><span class="rub">{{ form.theme.errors }}</span> {{form.theme}}<br /> 
+         <label for="id_message">Treść: </label><span class="rub">{{ form.message.errors }}</span> {{ form.message|safe }} <br />
+    
+     <input type="submit" value="Wyślij" id="komentarze-dodaj" />
+     </fieldset>
+</form>
+</div>
+{% endblock %}
+

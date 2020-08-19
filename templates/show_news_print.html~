@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-left" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <!-- {% block main %} --><!-- {% endblock %} -->
+            
+            <div class="static-tresc">
+                <h2>{{ news.title }}</h2>
+                {% if news.photo_set.count %}
+                <div class="photocontainer">
+		<p><img class="alignleft" src="{{news.photo_set.all.0.image.i600px_url}}" alt="{{news.photo_set.all.0.title}}" height="250"/></p>
+		<p class="male">{{news.photo_set.all.0.caption}}</p>
+		</div>
+                {% endif %}
+                {{ news.text|safe }}<br />
+                <p><span class="mod-date">Dodane</span>: {{ news.date|date:"Y.m.d H:i" }}, <span class="news-tag">Tagi</span>:
+
+                 {% for tag in news.get_tags %}
+		         <a class="news-tag-link" href="/tag/{{tag}}">{{tag}}</a>
+		 {%endfor%} 
+                 {% if user.is_superuser %}, <a href="/admin/news/news/{{ news.id }}/">Edytuj</a>{% endif %}
+		</p>
+{% comment %}		
+		<div class="komentarze">
+
+		<h2>Komentarze</h2>
+                    {% for c in news.comment_set.all %}
+                    {% if c.removed %}
+                    <blockquote><strong>Komentarz został usunięty ze względu na naruszenie <span style="text-decoration:underline"><a href="/static/zasady">zasad</a></span></strong></blockquote>
+                    {% else %}
+		    <blockquote><strong>{{c.author}}</strong> {{c.www}}: {{ c.text }} ({{ c.date|date:"Y.m.d H:i" }}{% if user.is_superuser %}, <a href="/admin/news/comment/{{ c.id }}/">Edytuj</a>{% endif %})</blockquote>{% endif %}
+                    {% endfor %}
+                    <form action="./" method="post">
+                    <fieldset id="komentarze-fieldset">
+                    <legend>Dodaj komentarz (gwiazdka oznacza pole obowiązkowe).<br />
+                            Zapoznaj się z <a href="/static/zasady">zasadami.</a></legend>
+			    <label for="id_author">Autor* (nazwisko lub pseudonim): </label>{{ form.author }}<br/>
+			    <label for="id_e_mail">Adres e-mail: </label>{{ form.e_mail }} <br />
+			    <label for="id_www">Strona www: </label> {{ form.www }} <br />
+			    <label for="id_text">Treść*: </label>{{ form.text }}<br />
+                    <input type="reset" value="Wyczyść pola" id="komentarze-rerset" />
+                    <input type="submit" value="Dodaj komentarz" id="komentarze-dodaj" />
+                    </fieldset>
+                    </form>
+                </div>
+{% endcomment %}
+            </div>
+            </div>
+            <div class="main-dol">&nbsp;</div>
+
+		<!-- główny blok koniec -->	
+    </div>
+
+
+
+
+    <div style="clear: both">&nbsp;</div>
+                        
+{% endblock %}
+

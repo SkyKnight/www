@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block wiadomosci %}
+
+
+<div id="main-left" class="main">
+<div class="main-gora">&nbsp;</div>
+<div class="main-center">
+{% ifnotequal yt_url_id "none" %}
+    <div id="film-big">
+	<h3>Film: <span style="color: black">{{ big_film.0.title }}</span></h3>
+	<object width="600" height="360" type="application/x-shockwave-flash" data="http://www.youtube.com/v/{{yt_url_id}}&amp;hl=pl_PL&amp;fs=1&amp;" >
+	    <param name="movie" value="http://www.youtube.com/v/{{yt_url_id}}&amp;hl=pl_PL&amp;fs=1&amp;"></param>
+	    <param name="allowFullScreen" value="true"></param>
+	    <param name="allowscriptaccess" value="always"></param>
+	    <!-- <embed src="http://www.youtube.com/v/{{yt_url_id}}&hl=pl_PL&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed>-->
+	</object>
+	<p class="folm-opis-big">{{ big_film.0.description|removetags:"div span ul li ol a h1 h2 h3 h4 h5 h6"|safe }}</p>
+    </div>
+    <h4 class="filmy-list-head">Zobacz również inne filmy</h4>
+{% endifnotequal %}
+    
+
+<div class="filmy">
+ {% ifequal yt_url_id "none" %}
+<h3>Filmy</h3>
+{% endifequal %}   
+ {% for n in object_list %}
+         <div class="film">
+	        <a href="/film/?y={{n.youtube_url_id}}"><img class="alignleft" src="http://img.youtube.com/vi/{{n.youtube_url_id}}/hqdefault.jpg" alt="{{n.title}}" width = "150" /></a>    
+		<h3><a href="/film/?y={{n.youtube_url_id}}">{{ n.title }}</a></h3>
+		<p>{{ n.description|removetags:"div span b ul li ol i em a h1 h2 h3 h4 h5 h6"|safe}}</p>
+		<p class="news-dane"><b>Dodany</b>: {{ n.date|date:"Y.m.d H:i" }}</p>
+
+	</div>
+ {% endfor  %}
+    <div class="news-pagination">	
+    {% if has_previous %}
+	<div class="news-nowsze";"><a href="?page={{ previous }}">Nowsze filmy &gt;&gt;</a></div>
+    {% endif %}
+    {% if has_next %}
+	<div class="news-starsze"><a href="?page={{ next }}">&lt;&lt; Starsze filmy</a></div>
+    {% endif %}
+    </div>
+    </div>
+    </div>
+    <div class="main-dol">&nbsp;</div>
+
+</div>
+
+<!-- główny blok koniec -->
+
+		<!-- pasek boczny start -->
+		<div id="sidebar-right" class="sidebar">
+			{% include "last_news.html" %}
+			{% include "archives_widg.html" %}
+		<!-- pasek boczny koniec -->
+		</div>
+
+
+		<div style="clear: both">&nbsp;</div>
+
+{% endblock %}

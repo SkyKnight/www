@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-right" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <div id="static-naglowek">
+              
+            </div>
+            
+            <div class="static-tresc">
+	    {% block main %}      
+		<h2>Inne serwisy związane z tradycyjną liturgią</h2>
+                {% for link in l %} 
+		<p><a href="{{link.slug|safe}}">{{link.title|safe}}</a><br />
+                {{link.description|safe}}</p>
+                
+                
+                {% endfor %}		
+ 
+		
+            {% endblock %}
+	    </div>
+	</div>
+	<div class="main-dol">&nbsp;</div>
+		<!-- główny blok koniec -->	
+    </div>
+
+
+
+
+    <div style="clear: both">&nbsp;</div>
+                        
+{% endblock %}
+

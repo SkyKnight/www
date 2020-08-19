@@ -1,0 +1,9 @@
+build
+share
+bin
+lib
+*.jpg
+*.png
+*.gif
+*.pdf
+*.pyc

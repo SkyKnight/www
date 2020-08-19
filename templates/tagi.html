@@ -1,0 +1,14 @@
+{% load tagging_tags %}
+
+<div class="widget">
+	<h3>Tagi </h3>
+	<div class="widget-center">
+	<div id="widget_tag_cloud">
+{% tag_cloud_for_model news.News as entry_tags with steps=10 min_count=1 distribution=log %}
+   {% for tag in entry_tags %}
+        <a class="tag{{ tag.font_size }}" href="/tag/{{ tag }}/">{{ tag }}</a>
+   {% endfor %}
+	</div>
+	</div>
+	<div class="widget-dol">&nbsp;</div>
+</div>

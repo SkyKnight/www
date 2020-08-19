@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-left" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <!-- {% block main %} --><!-- {% endblock %} -->
+            
+            <div class="static-tresc">
+            <h3>Listy Czytelników</h3>
+{% if user.is_superuser %}
+<table>
+<tr>
+            <td>Nadawca</td>
+            <td>Adres</td>
+            <td>Temat</td>
+
+
+</tr>
+
+{% for l in object_list %}            
+<tr>
+            <td>{{l.name}}</td>
+            <td>{{l.email}}</td>
+            <td><a href='/list/{{l/pk}}'>{{l.theme}}</a></td>
+
+</tr>
+{% endfor %}            
+</table>
+{% endif %}
+
+
+
+            </div>
+        </div>
+            <div class="main-dol">&nbsp;</div>
+
+                <!-- główny blok koniec -->
+    </div>
+
+                        
+{% endblock %}
+

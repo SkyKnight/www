@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-right" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <!-- {% block main %} --><!-- {% endblock %} -->
+            <div id="static-naglowek">
+              
+            </div>
+            
+            <div class="static-tresc" id="sitemap">
+	       <h3>Mapa strony</h3>
+                <ul>
+                 {% load tree_menu_tags %}
+		 {% show_menu "main" %}
+		</ul>
+            </div>
+        </div>
+        <div class="main-dol">&nbsp;</div>
+		<!-- główny blok koniec -->	
+    </div>
+
+
+
+
+    <div style="clear: both">&nbsp;</div>
+                        
+{% endblock %}
+

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-right" class="main">
+        <div class="main-gora">&nbsp;</div>
+        <div class="main-center">
+            <div id="static-naglowek">
+
+            </div>
+
+            <div class="static-tresc">
+            
+                <h2>Intencje mszalne</h2>
+
+     {% for n in object_list %}
+         <div class="news">
+                <h4>{{ n }}</a></h3>
+                {{ n.intentions|safe}}
+              <!-- <p class="news-line" /> -->
+
+        </div>
+
+     {% endfor  %}
+
+    <div class="news-pagination">
+    {% if has_previous %}
+        <p class="news-nowsze"><a href="/?page={{ previous }}">Nowsze intencje &gt;&gt;</a></p>
+    {% endif %}
+    {% if has_next %}
+        <p class="news-starsze"><a href="/?page={{ next }}">&lt;&lt; Starsze intencje</a></p>
+    {% endif %}
+</div>
+
+
+            
+            </div>
+        </div>
+        <div class="main-dol">&nbsp;</div>
+                <!-- główny blok koniec -->
+    </div>
+
+
+
+
+    <div style="clear: both">&nbsp;</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block wiadomosci %}
+    <div id="main-right" class="main">
+	<div class="main-gora">&nbsp;</div>
+	<div class="main-center">
+            <!-- {% block main %} --><!-- {% endblock %} -->
+            <div id="static-naglowek">
+              
+            </div>
+            
+            <div class="static-tresc" id="sitemap">
+	       <h3>Mapa strony</h3>
+                <ul>
+                 {% load tree_menu_tags %}
+		 {% show_menu "main" %}
+		</ul>
+            </div>
+        </div>
+        <div class="main-dol">&nbsp;</div>
+		<!-- główny blok koniec -->	
+    </div>
+
+		<!-- pasek boczny start -->
+    <div id="sidebar-left" class="sidebar">
+        <div class="widget">
+  		<h3>Najnowsze wiadomości</h3>
+		<div class="widget-center">
+		<ul class="kat">
+		{% for i in newsy %} 
+			<li><a href="/news/{{ i.slug }}/">{{i.title}}</a></li>
+		{% endfor %} 
+		</ul>
+		</div>
+		<div class="widget-dol">&nbsp;</div>
+	</div>
+
+                {% include "search.html" %}
+ 
+                {% include "tagi.html" %}
+                {% include "archives_widg.html" %}
+
+
+		<!-- pasek boczny koniec -->
+    </div>
+
+
+    <div style="clear: both">&nbsp;</div>
+                        
+{% endblock %}
+

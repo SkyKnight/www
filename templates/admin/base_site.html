@@ -1,0 +1,59 @@
+<style type="text/css">
+#id_tresc {height: 600px;}
+#id_page {height: 600px;}
+#id_text_html {height: 600px;}
+#id_description {height: 600px;}
+#id_text_markdown {height: 600px;}
+#id_pytanie  {height: 200px;}
+#id_odpowiedz  {height: 600px;}
+
+</style>
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | Panel administracyjny{% endblock %}
+
+{% block extrahead %}
+<script language="javascript" type="text/javascript" src="/site_media/js/tiny_mce4/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+                "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                "table contextmenu directionality emoticons template textcolor paste fullpage textcolor"
+        ],
+    toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect forma\
+tselect fontselect fontsizeselect",
+    toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code\
+ | inserttime preview | forecolor backcolor",
+    toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars \
+visualblocks nonbreaking template pagebreak restoredraft",
+        //menubar: false,
+        //language: 'pl', - nie działa
+//    content_css : "/site_media/css/style.css",
+        style_formats: [
+//                {title: 'Bold text', inline: 'b'},
+//                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+//                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'rubryka', inline: 'span', classes: 'rub'},
+                {title: 'nigryka', inline: 'span', classes: 'nig'},
+//                {title: 'Table styles'},
+//                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+        ],
+//        templates: [
+//                {title: 'Test template 1', content: 'Test 1'},
+//                {title: 'Test template 2', content: 'Test 2'}
+//        ]
+
+
+});
+</script>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">Parafia NSPJ w Bydgoszczy</h1>
+<p><a href = "/listy" style="margin-left:50px;">Zarządzanie korespondencją</a></p>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

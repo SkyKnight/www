@@ -1,0 +1,11 @@
+<div class="widget">
+	<h3>Najnowsze wiadomości</h3>
+	<div class="widget-center">
+    	<ul class="kat">
+		{% for i in news_glob %} 
+			<li><a href="/news/{{ i.slug }}/">{{i.title}}</a></li>
+		{% endfor %} 
+	</ul>
+	</div>
+	<div class="widget-dol">&nbsp;</div>
+</div>

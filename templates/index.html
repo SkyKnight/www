@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block wiadomosci %}
+<h3>Parafia Rzymskokatolicka <br />pw. Najświętszego Serca Pana Jezusa w Bydgoszczy</h3>
+{% comment %}
+<div style="border-bottom:1px; border-bottom-style:solid;"><img src="/site_media/images/pierwszy_p_pazdz.png" style="margin-bottom:5px;" width="100%" alt="Pierwszy piątek października" /></div>
+
+
+<img src="/site_media/images/bsc.png" style="margin-top:15px;" width="100%" alt="Bydgoskie Sacre Coeur" />
+{% endcomment %}
+{% include "slider.html" %}
+<div id="main-left" class="main">
+
+    <div class="main-center">
+
+    <div class="newsy">
+         <div id="news-header">Aktualności i ogłoszenia parafialne</div>
+
+
+ <div class="news ciemny">
+                <h3><a href="#">Transmisja internetowa</a></h3>
+<div id="vidlive-embed-1187">&nbsp;</div>
+<script src="https://www.vidlive.co/embed/1187/embed.js"></script>
+<p>&nbsp;</p>
+              <!-- <p class="news-line" /> -->
+
+        </div>
+
+
+
+
+     {% for n in object_list %}
+         <div class="{% cycle 'news' 'news ciemny' %}">
+	        <h3><a href="/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+		{% if n.photo_set.count %}
+		<img class="alignleft thumb" src="{{n.photo_set.all.0.image.thumb_url}}" alt="{{n.photo_set.all.0.title}}"/>    
+		{% endif %}
+		{{ n.text|removetags:"div span h1 h2 h3 table tbody tr td"|truncatewords_html:45|safe}}
+		<p class="news-dane">
+{% if n.trunc %}
+		    <p class="more-link"><a href="/news/{{ n.slug }}/">Czytaj dalej >></a></p>
+{% endif %}
+		    <b>Dodane</b>: {{ n.date|date:"Y.m.d H:i" }}, <br/>
+            {% comment %}
+            <b>Tagi</b>:
+		    {% for tag in n.get_tags %}
+	    	    <a href="/tag/{{tag}}">{{tag}}</a>
+	    	    {%endfor%}
+            {% endcomment %}
+	        </p>
+	      <!-- <p class="news-line" /> -->
+
+	</div>
+
+    {% endfor  %}
+    
+    <div class="news-pagination">
+    {% if has_previous %}
+	<p class="news-nowsze"><a href="/?page={{ previous }}">Nowsze Wiadomości &gt;&gt;</a></p>
+    {% endif %}
+    {% if has_next %}
+	<p class="news-starsze"><a href="/?page={{ next }}">&lt;&lt; Starsze Wiadomości</a></p>
+    {% endif %}
+    </div>
+    
+    </div>
+    </div>
+    <div class="main-dol">&nbsp;</div>
+</div>
+
+<!-- główny blok koniec -->
+
+
+{% endblock %}

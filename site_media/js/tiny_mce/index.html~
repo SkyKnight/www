@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>test edytora tiny</title>
+      <script language="javascript" type="text/javascript"
+src="http://vps.jedryka.com/js/tiny_mce/tiny_mce.js"></script>
+      <script language="javascript" type="text/javascript">
+      tinyMCE.init({
+          theme : "advanced",
+	  mode : "textareas",
+	  plugins : "fullpage",
+	  theme_advanced_buttons3_add : "fullpage",
+          language : "pl"
+      });
+      </script> 
+</head>
+<body id="index" onload="">
+	Test edytora Tiny MCE
+	<form action="...">
+	<textarea name="nazwa" cols="60" rows="15">Tu wpisz tekst który pojawi się domyślnie</textarea>
+        </form>
+</body>
+</html>

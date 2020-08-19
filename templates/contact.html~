@@ -1,0 +1,28 @@
+{% extends "static.html" %}
+{% block main %}
+<h3>Kontakt</h3>
+
+{#{% include "contacttext.html" %}#}
+{{txt|safe}}
+
+<p>Ksiądz Proboszcz zachęca do wykorzystywania poniższego formularza do wysyłania zarówno informacji i zapytań w sprawach bieżących, jak i przemyśleń, rozważań, poglądów i pytań dotyczących zarówno sytuacji parafii jak i Kościoła w Polsce i na świecie. </p>
+<p>Jeśli Autor zgadza się na ewentualne opublikowanie listu wraz z odpowiedzią, proszony jest o zaznaczenie odpowiedniego pola</p>. 
+ 
+<div class="komentarze">
+
+<form action="/kontakt/" method="post">
+     <fieldset id="komentarze-fieldset">
+     <legend>Wyślij wiadomość</legend>
+         <label for="id_name">Od (nazwisko lub pseudonim): </label>{{ form.name }}<br/>
+         <label for="id_email">Adres e-mail: </label>{{ form.email }} <br />
+         <label for="id_message">Treść: </label> {{ form.message }} <br />
+         <label for="id_cc_myself">Wyślij mi kopię </label>{{ form.cc_myself }}<br />
+         <label for="id_accord">Zgadzam się na publikację mojego pytania i odpowiedzi </label>{{ form.accord }}<br />
+
+     <input type="reset" value="Wyczyść pola" id="komentarze-rerset" />
+     <input type="submit" value="Wyślij" id="komentarze-dodaj" />
+     </fieldset>
+</form>
+</div>
+{% endblock %}
+

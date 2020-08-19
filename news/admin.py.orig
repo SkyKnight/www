@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+from django.contrib import admin
+
+from news.models import *
+
+#class CategoryAdmin(admin.ModelAdmin):
+#	list_display = ('name','icon')
+#	prepopulated_fields = {'slug': ('name',)}
+
+def make_published(modeladmin, request, queryset):
+    if request.user.is_superuser:
+        queryset.update(published=True)
+make_published.short_description = u"Opublikuj wybrane artykuły"
+
+def make_unpublished(modeladmin, request, queryset):
+    if request.user.is_superuser:
+        queryset.update(published=False)
+make_unpublished.short_description = u"Wstrzymaj publikację wybranych artykułów"
+
+
+class NewsAdmin(admin.ModelAdmin):
+    exclude = ('owner',)
+    list_display = ('title','date','owner', 'published')
+    prepopulated_fields = {'slug': ('title',)}
+    actions = [make_published, make_unpublished]
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.owner = request.user
+        obj.save()
+
+
+class CommentAdmin(admin.ModelAdmin):
+	list_display = ('news','text', 'date')
+	list_filter = ('date',)
+
+class PhotoInline(admin.StackedInline):
+    model = Photo
+
+class NewsAdmin(admin.ModelAdmin):
+    inlines = [PhotoInline]
+    list_display = ('title','date')
+    prepopulated_fields = {'slug': ('title',)}
+
+class FilmAdmin(admin.ModelAdmin):
+    list_display = ('title','date')
+    list_filter = ('title',)
+
+admin.site.register(Comment, CommentAdmin)
+#admin.site.register(Category, CategoryAdmin)
+admin.site.register(News, NewsAdmin)
+admin.site.register(Photo)
+admin.site.register(Film, FilmAdmin)
+

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block wiadomosci %}
+
+
+<div id="main-left" class="main">
+<div class="main-gora">&nbsp;</div>
+<div class="main-center">
+<div class="newsy">
+<h3 class="tag_page">Wiadomości oznaczone tagiem: <span>{{tag}}</span></h3>
+ {% for n in object_list %}
+        <div class="news">
+	        <h3><a href="/news/{{ n.slug }}/">{{ n.title }}</a></h3>
+		{% if n.photo_set.count %}
+		<img class="alignleft thumb" src="{{n.photo_set.all.0.image.thumb_url}}" alt="{{n.photo_set.all.0.title}}"/>    
+		{% endif %}
+		{{ n.text|removetags:"div ul ol span h1 h2 h3 h4 h5 h6"|safe|truncatewords_html:50}}<p class="more-link"><a href="/news/{{ n.slug }}/">Czytaj dalej</a></p>
+		<p class="news-dane"><b>Dodane</b>: {{ n.date|date:"Y.m.d H:i" }}, <b>Tagi</b>:
+		{% for tag in n.get_tags %}
+	      <a href="/tag/{{tag}}">{{tag}}</a>
+	      {%endfor%}
+	      <hr class="news-line" />
+
+	</div>
+    {% endfor  %}
+
+    <div class="news-pagination">
+    {% if has_previous %}
+	<div class="news-nowsze";"><a href="/?page={{ previous }}">Nowsze Wiadomości</a></div>
+    {% endif %}
+    {% if has_next %}
+	<div class="news-starsze"><a href="/?page={{ next }}">Starsze Wiadomości</a></div>
+    {% endif %}
+    </div>
+</div>
+</div>
+<div class="main-dol">&nbsp;</div>
+</div>
+
+<!-- główny blok koniec -->
+
+
+		<div style="clear: both">&nbsp;</div>
+
+{% endblock %}

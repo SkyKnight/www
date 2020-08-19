@@ -1,0 +1,11 @@
+    <div class="widget">
+	<h3>Multimedia - filmy</h3>
+	<div class="widget-center">
+		<p><a href="/film/?y=QVTtYFEc-uY" class="widget-film-link">
+			<img src="http://img.youtube.com/vi/QVTtYFEc-uY/hqdefault.jpg" alt="Zobacz film" width="250" /> 
+			<span class="widget-film-arrow">&nbsp;</span>
+		</a></p>
+
+	</div>
+	<div class="widget-dol" style="clear: both">&nbsp;</div>
+    </div>			

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pl_PL" />
+<meta name="keywords" content="polska plus, polska-plus, polska l, koło parlamentarne, państwo,
+polityka, konserwatyzn, centroprawica, niezależna, Dorn, Ujazdowski, Krzywicki, Sellin, Walkowiak,
+Karasiewicz, Polaczek, Parlament, Konstytucja" />
+<meta name="description" content="Portal Koła Parlamentarneto Polska Plus. Zapraszamy
+na debatę publiczną" />
+<link rel="alternate" type="application/rss+xml" title="Polska Plus - informacje" href="../rss/news" />
+<link rel="stylesheet" type="text/css" media="screen" href="/site_media/themes/plus_1/style.css" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" media="all" href="/site_media/themes/plus_1/style-ie6.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/site_media/themes/plus_1/style-print.css" />
+<link rel="shortcut icon" href="/site_media/favicon.ico" />
+<script src="/site_media/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/site_media/js/contentslider.js">
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<title>{{ wpis.tytul }} {{ news.title }} Polska-Plus</title>
+
+</head>
+{% load tree_menu_tags %}
+<body>
+<div id="page">
+
+				
+	<!-- naglowek -->
+	<div id="header">	
+
+		<div id="header-pre">
+			<div id="header-pre-inner">
+				<a href="/">www.polska-plus.pl</a>
+				<div id="access"><!-- elementy związane z accessibility--></div>
+				<div id="header-navi">
+					<ul>
+						<li class="navi-rss"><a href="/rss/news">RSS</a></li>
+						<li class="navi-contact"><a href="/kontakt">Kontakt</a></li>
+						<li class="navi-map"><a href="/static/sitemap">Mapa strony</a></li>
+						<li class="navi-home"><a href="/">Strona główna</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="header-in">
+			<div id="obrazek">
+				<!-- <p class="slogan">Więcej dla Polski</p>
+-->
+			</div>
+			<h1><a href="/"><img src="/site_media/themes/plus_1/images/polska-plus_logo_314x94.jpg" alt="Polska Plus logo" class="logo-img" /></a></h1>
+		</div>
+
+		
+	<!-- nawigacja start-->	
+	<div id="menu">
+		<ul id="nav">
+		{% show_menu "main" %}
+	</ul>
+	<!-- navigacja koniec-->	
+	</div>
+	<!--koniec naglowka-->					
+	</div>
+		
+
+
+	<!-- głowny blok start -->
+	<div id="content-shadow">
+	
+	<div id="content">
+	
+			
+	       {% block wiadomosci %} {% endblock %}
+
+			
+	<!-- div content koniec -->
+	</div>
+	<div id="content-bottom-shadow">&nbsp;</div>
+	<!-- głowny blok koniec -->
+	</div>
+		
+	<!-- stopka start -->		
+	<div id="footer">
+			
+<!--
+			<div id="footer-columns">
+			>
+			</div>
+
+			-->
+			
+			
+			
+			<p class="footer-bottom-line">Polska Plus &copy; 2010 Wszelkie Prawa Zastrzeżone  | 
+			 Oprogramowanie <a href="http://www.jedryka.com">Iota</a> w oparciu o framework <a href="http://djangoproject.com">Django</a>. </p>
+  <!-- stopka koniec -->
+    </div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12376067-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

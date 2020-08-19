@@ -1,0 +1,17 @@
+
+
+
+	{% for body in bodies %}	
+        <div class="widget">
+<!--        <h3>{{body.title|safe}}</h3>-->
+          {{body.body|safe}}
+        <div class="widget-dol">&nbsp;<p></p></div>
+        </div>
+
+        {% endfor %}
+
+	
+		
+
+	
+

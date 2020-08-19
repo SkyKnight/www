@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1250">
+  <TITLE></TITLE>
+  <META NAME="GENERATOR" CONTENT="OpenOffice.org 3.3  (Win32)">
+  <META NAME="AUTHOR" CONTENT="Michał Jędryka">
+  <META NAME="CREATED" CONTENT="20120601;14053077">
+  <META NAME="CHANGEDBY" CONTENT="Michał Jędryka">
+  <META NAME="CHANGED" CONTENT="20120601;14130006">
+  <STYLE TYPE="text/css">
+    <!--
+       @page { size: 21cm 29.7cm; margin: 2cm }
+       P { margin-bottom: 0.21cm }
+       -->
+    </STYLE>
+</HEAD>
+<BODY LANG="pl-PL" LINK="#000080" VLINK="#800000" DIR="LTR">
+<P ALIGN=RIGHT STYLE="margin-bottom: 0cm">
+Bydgoszcz, {{ news.date|date:"d.m.Y" }} A.D.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=6><B>Ogłoszenia
+Duszpasterskie</B></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt"><U><B>
+{{ news.title }}
+</B></U></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<FONT SIZE=4 STYLE="font-size: 16pt">
+
+                {{ news.text|safe }}
+
+</FONT>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>
+

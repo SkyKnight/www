@@ -1,0 +1,50 @@
+			<div id="slider" class="sliderwrapper">
+				<!-- szablon slidera - zmienny -->
+				<div class="contentdiv" style="background: url(/site_media/content/Konferencja-w-Warszawie-br-6-z-10.jpg) center left no-repeat">					<div class="polecane-opis">
+						<h3>Tytuł newsa lub strony</h3>
+						<p>Fragment tekstu. Tutaj zmieści się bardzo niewiele słów. Trzeba więc się bardzo strzeszczać ...
+						<a class="alignright" href="#">Więcej >></a></p>
+						
+					</div>
+				</div>
+				<div class="contentdiv" style="background: url(/site_media/content/Konferencja-w-Lodzi-14_12_2008-6_z_6.jpg) center left no-repeat">
+					<div class="polecane-opis">
+						<h3>Tytuł newsa 2 lub strony</h3>
+						<p>Fragment tekstu. Takie rzeczy będą się działy w tym miejscu kiedy zostanie przekroczona dozwolona długość tekstu. Nie powinno raczej tak być, prawda ?<a class="alignright" href="#">Więcej >></a></p>
+						
+					</div>
+				</div>
+				<div class="contentdiv" style="background: url(/site_media/content/Konferencja-w-Warszawie-br-10-z-10.jpg) center left no-repeat">
+					<div class="polecane-opis">
+						<h3>Tytuł newsa 3 lub strony</h3>
+						<p>Fragment tekstu<a class="alignright" href="#">Więcej >></a></p>
+						
+					</div>
+				</div>
+				<!-- nawigacja slidera -->
+				<div id="paginate-slider" class="pagination">
+					<a href="#" class="toc" style="margin-left: 35px"><img src="/site_media/content/Konferencja-w-Warszawie-br-6-z-10.jpg" width="100" /></a> 
+					<a href="#" class="toc someclass"><img src="/site_media/content/Konferencja-w-Lodzi-14_12_2008-6_z_6.jpg" width="100"  /></a> 
+					<a href="#" class="toc someotheclass"><img src="/site_media/content/Konferencja-w-Warszawie-br-10-z-10.jpg" width="100" /></a>
+				</div>
+				<!-- szablon slidera - zmienny - koniec -->
+			</div>
+
+<script type="text/javascript">
+
+featuredcontentslider.init({
+id: "slider", //id of main slider DIV
+contentsource: ["inline", ""], //Valid values: ["inline", ""] or ["ajax", "path_to_file"]
+toc: "markup", //Valid values: "#increment", "markup", ["label1", "label2", etc]
+nextprev: ["", "Next"], //labels for "prev" and "next" links. Set to "" to hide.
+revealtype: "click", //Behavior of pagination links to reveal the slides: "click" or "mouseover"
+enablefade: [true, 0.1], //[true/false, fadedegree]
+autorotate: [true, 3000], //[true/false, pausetime]
+onChange: function(previndex, curindex){ //event handler fired whenever script changes slide
+//previndex holds index of last slide viewed b4 current (1=1st slide, 2nd=2nd etc)
+//curindex holds index of currently shown slide (1=1st slide, 2nd=2nd etc)
+}
+})
+
+</script>	
+

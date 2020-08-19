@@ -1,0 +1,13 @@
+{% extends "static.html" %}
+
+{% block main %}
+
+<p>{{komunikat}}</p>
+<script>
+    function init(){
+        setTimeout('document.location="/"', 5000);
+       		   }
+    window.onload=init;
+</script>
+{% endblock %}
+

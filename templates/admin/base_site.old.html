@@ -1,0 +1,39 @@
+<style type="text/css">
+#id_tresc {height: 600px;}
+#id_page {height: 600px;}
+#id_text_html {height: 600px;}
+#id_description {height: 600px;}
+#id_text_markdown {height: 600px;}
+
+</style>
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | Panel administracyjny{% endblock %}
+
+{% block extrahead %}
+<script language="javascript" type="text/javascript" src="/site_media/js/tiny_mce/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+      tinyMCE.init({
+          mode : "exact",
+          elements : "id_tresc, id_page, id_text_html, id_description, id_text_markdown",
+	  theme : "advanced",
+          theme_advanced_toolbar_location : "top",
+          theme_advanced_toolbar_align : "left",
+	  content_css : "/site_media/css/style.css",
+          language : "pl",
+	  entity_encoding : "raw",
+	  relative_urls : false,
+	  convert_urls : false,
+	  remove_script_host : false,
+          extended_valid_elements : "iframe[src|width|height|name|align]"	  
+});
+</script> 
+
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">Tradycja katolicka par. NSPJ</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
