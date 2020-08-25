@@ -1,0 +1,44 @@
+version: "3.1"
+services:
+    nspj-mysql:
+        image: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_USER: nspj
+            MYSQL_DATABASE: nspj
+            MYSQL_PASSWORD: password
+        volumes:
+            - ./storage/db:/var/lib/mysql
+        networks:
+            - nspj-network
+
+    nspj-pma:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8090:80"
+        environment:
+            PMA_HOST: nspj-mysql
+        networks:
+            - nspj-network
+        depends_on:
+            - nspj-mysql
+
+    nspj-www:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
+        volumes:
+            - ./storage/media:/usr/src/site_media
+        networks:
+            - nspj-network
+        tty: true
+        depends_on:
+            - nspj-mysql
+
+networks:
+    nspj-network:
+    
